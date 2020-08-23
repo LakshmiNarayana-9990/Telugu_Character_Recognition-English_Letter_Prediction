@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html >
+<html lang="en">
+  <head>
+	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recognize Letters!</title>
+<style><head>
+* {
+  box-sizing: border-box;
+ 
+}
+
+main {
+  width: 200px;
+  height:100px;
+  border: 5px solid #e0e0e0;
+  margin: 0 auto;
+  display: flex;
+  
+  flex-grow: 1;
+}
+
+.left-block {
+  width: 160px;  background-color:#ffffcc;
+
+  border-right: 5px solid black;
+}
+.crosshair       { cursor: crosshair; }
+.button {
+  background-color: #1ad1ff;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+    border-radius: 15px;
+
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button:hover {opacity: 1}
+.cursors {
+  display: flex;
+  flex-wrap: wrap;
+}
+</head></style>
+
+<body>
+	<h1 style="text-align:center">Draw your letter below to predict:</h1>
+
+		<form action="{{ url_for('predict')}}"method="post">
+			<main>
+				<div class="left-block"><center>
+					<div class="buttons">
+						<button id="clear"class="button" >Clear</button>
+						<button id="save" class="button" >save</button>
+
+					</div></center>
+				</div>
+				<div class="cursors">
+					<div class="crosshair"> <div class="right-block">
+	  
+						<canvas id="paint-canvas" style="background-color:white" width="100" height="100"></canvas></div>
+					</div>
+
+				</div>
+			</main>
+		</form>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+		<path fill="#0099ff" fill-opacity="1" d="M0,256L11.4,213.3C22.9,171,46,85,69,90.7C91.4,96,114,192,137,213.3C160,235,183,181,206,138.7C228.6,96,251,64,274,74.7C297.1,85,320,139,343,149.3C365.7,160,389,128,411,122.7C434.3,117,457,139,480,133.3C502.9,128,526,96,549,80C571.4,64,594,64,617,53.3C640,43,663,21,686,32C708.6,43,731,85,754,117.3C777.1,149,800,171,823,197.3C845.7,224,869,256,891,229.3C914.3,203,937,117,960,90.7C982.9,64,1006,96,1029,138.7C1051.4,181,1074,235,1097,240C1120,245,1143,203,1166,192C1188.6,181,1211,203,1234,192C1257.1,181,1280,139,1303,122.7C1325.7,107,1349,117,1371,101.3C1394.3,85,1417,43,1429,21.3L1440,0L1440,320L1428.6,320C1417.1,320,1394,320,1371,320C1348.6,320,1326,320,1303,320C1280,320,1257,320,1234,320C1211.4,320,1189,320,1166,320C1142.9,320,1120,320,1097,320C1074.3,320,1051,320,1029,320C1005.7,320,983,320,960,320C937.1,320,914,320,891,320C868.6,320,846,320,823,320C800,320,777,320,754,320C731.4,320,709,320,686,320C662.9,320,640,320,617,320C594.3,320,571,320,549,320C525.7,320,503,320,480,320C457.1,320,434,320,411,320C388.6,320,366,320,343,320C320,320,297,320,274,320C251.4,320,229,320,206,320C182.9,320,160,320,137,320C114.3,320,91,320,69,320C45.7,320,23,320,11,320L0,320Z"></path>
+	</svg>  
+	
+ 
+<script type="text/javascript">
+
+	window.onload = function () {
+
+  // Definitions
+  var canvas = document.getElementById("paint-canvas");
+  var context = canvas.getContext("2d");
+  var boundings = canvas.getBoundingClientRect();
+
+  // Specifications
+  var mouseX = 0;
+  var mouseY = 0;
+  context.strokeStyle = 'black'; // initial brush color
+  context.lineWidth = 5; // initial brush width
+  var isDrawing = false;
+
+
+  
+
+  // Mouse Down Event
+  canvas.addEventListener('mousedown', function(event) {
+    setMouseCoordinates(event);
+    isDrawing = true;
+
+    // Start Drawing
+    context.beginPath();
+    context.moveTo(mouseX, mouseY);
+  });
+ // Mouse Move Event
+  canvas.addEventListener('mousemove', function(event) {
+    setMouseCoordinates(event);
+
+    if(isDrawing){
+      context.lineTo(mouseX, mouseY);
+      context.stroke();
+    }
+  });
+
+  // Mouse Up Event
+  canvas.addEventListener('mouseup', function(event) {
+    setMouseCoordinates(event);
+    isDrawing = false;
+  });
+
+  // Handle Mouse Coordinates
+  function setMouseCoordinates(event) {
+    mouseX = event.clientX - boundings.left;
+    mouseY = event.clientY - boundings.top;
+  }
+
+  // Handle Clear Button
+  var clearButton = document.getElementById('clear');
+
+  clearButton.addEventListener('click', function() {
+    context.clearRect(0, 0, 100, 100);
+  });
+
+  // Handle Save Button
+  var saveButton = document.getElementById('save');
+
+  saveButton.addEventListener('click', function(event) {
+    var imageName = alert('Is it Ok');
+    var canvasDataURL = canvas.toDataURL("image/png");
+    var a = document.createElement('a');
+    a.href = canvasDataURL;
+    a.download = 'iii.png';
+    a.click();
+	
+  });
+  
+ 
+};
+</script>
+
+</body>
+</html>

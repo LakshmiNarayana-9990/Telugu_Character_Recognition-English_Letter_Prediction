@@ -1,0 +1,179 @@
+
+<html>
+<style>
+
+html, body {
+  height: 100%;
+  margin: 0;
+  position: relative;
+  background:  #e60000;
+  font-family: "Open Sans";
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#wrap p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: rgba(255,255,255,.5);
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.ball {
+  pointer-events: none;
+  position: absolute; 
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; 
+  background: gray;
+  animation: implode 1s ease-in-out;
+  animation-fill-mode: both;
+  opacity: .5;
+}
+
+@keyframes implode {
+  100% {transform: scale(0)}
+}</style>
+
+<body>
+<div id="wrap">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#f3f4f5" fill-opacity="1" d="M0,256L36.9,128L73.8,64L110.8,288L147.7,224L184.6,224L221.5,288L258.5,0L295.4,224L332.3,224L369.2,192L406.2,320L443.1,256L480,192L516.9,160L553.8,192L590.8,160L627.7,160L664.6,64L701.5,32L738.5,288L775.4,128L812.3,224L849.2,192L886.2,320L923.1,96L960,0L996.9,192L1033.8,32L1070.8,96L1107.7,288L1144.6,288L1181.5,64L1218.5,256L1255.4,224L1292.3,288L1329.2,96L1366.2,288L1403.1,320L1440,0L1440,0L1403.1,0L1366.2,0L1329.2,0L1292.3,0L1255.4,0L1218.5,0L1181.5,0L1144.6,0L1107.7,0L1070.8,0L1033.8,0L996.9,0L960,0L923.1,0L886.2,0L849.2,0L812.3,0L775.4,0L738.5,0L701.5,0L664.6,0L627.7,0L590.8,0L553.8,0L516.9,0L480,0L443.1,0L406.2,0L369.2,0L332.3,0L295.4,0L258.5,0L221.5,0L184.6,0L147.7,0L110.8,0L73.8,0L36.9,0L0,0Z"></path>
+</svg>
+  <p style="width:10px height:10px;">{{prediction_text}}</p>
+  <div class="ball" style="left: 350px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 355px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 360px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 390px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 395px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 400px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 430px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 435px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 440px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 470px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 475px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 480px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 510px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 515px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 520px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 550px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 555px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 560px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 590px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 595px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 600px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 630px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 635px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 640px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 670px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 675px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 680px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 710px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 715px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 720px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 750px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 755px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 760px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 790px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 795px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 800px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 830px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 835px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 840px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 870px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 875px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 880px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 910px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 915px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 920px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 950px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 955px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 960px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 990px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 995px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 1000px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 1030px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 1035px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 1040px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 1070px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 1075px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 1080px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 1110px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 1115px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 1120px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 1150px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 1155px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 1160px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="left: 1190px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="left: 1195px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+
+<div class="ball" style="right: 600px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 610px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 615px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 640px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 650px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 655px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 680px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 690px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 695px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 720px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 730px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 735px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 760px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 770px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 775px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 800px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 810px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 815px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 840px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 850px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 855px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 880px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 890px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 895px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 920px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 930px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 935px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 960px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 970px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 975px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 1000px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 1010px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 1015px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 1040px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 1050px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 1055px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 1080px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 1090px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 1095px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 1120px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 1130px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 1135px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 1160px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 1170px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 1175px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 1200px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 1210px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 1215px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 1240px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 1250px;top: 293px;background: rgb(53,95,156);height: 40px; width: 40px;"></div>
+<div class="ball" style="right: 1255px;top: 321px;background: rgb(193,172,131);height: 40px; width: 40px;"></div>
+ <div class="ball" style="right: 1280px;top: 309px;background: rgb(174,60,154);height: 40px; width: 40px;"></div>
+
+<br><br><br>
+
+  </div>
+  
+
+</body>
+</html>

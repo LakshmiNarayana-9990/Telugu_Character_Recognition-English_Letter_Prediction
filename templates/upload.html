@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Upload</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<style>.button {
+  background-color: #1ad1ff;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+    border-radius: 15px;
+
+
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+.msg{
+}
+.button:hover {opacity: 1}
+</style>
+<body>
+<div class="wave-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#ff5500" fill-opacity="1" d="M0,224L0,128L51.4,128L51.4,96L102.9,96L102.9,128L154.3,128L154.3,192L205.7,192L205.7,32L257.1,32L257.1,320L308.6,320L308.6,320L360,320L360,224L411.4,224L411.4,64L462.9,64L462.9,224L514.3,224L514.3,32L565.7,32L565.7,64L617.1,64L617.1,128L668.6,128L668.6,96L720,96L720,192L771.4,192L771.4,192L822.9,192L822.9,128L874.3,128L874.3,192L925.7,192L925.7,224L977.1,224L977.1,96L1028.6,96L1028.6,32L1080,32L1080,320L1131.4,320L1131.4,192L1182.9,192L1182.9,192L1234.3,192L1234.3,256L1285.7,256L1285.7,96L1337.1,96L1337.1,160L1388.6,160L1388.6,192L1440,192L1440,0L1388.6,0L1388.6,0L1337.1,0L1337.1,0L1285.7,0L1285.7,0L1234.3,0L1234.3,0L1182.9,0L1182.9,0L1131.4,0L1131.4,0L1080,0L1080,0L1028.6,0L1028.6,0L977.1,0L977.1,0L925.7,0L925.7,0L874.3,0L874.3,0L822.9,0L822.9,0L771.4,0L771.4,0L720,0L720,0L668.6,0L668.6,0L617.1,0L617.1,0L565.7,0L565.7,0L514.3,0L514.3,0L462.9,0L462.9,0L411.4,0L411.4,0L360,0L360,0L308.6,0L308.6,0L257.1,0L257.1,0L205.7,0L205.7,0L154.3,0L154.3,0L102.9,0L102.9,0L51.4,0L51.4,0L0,0L0,0Z"></path>
+</svg>
+<form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+<center>
+    <strong><h2>Select your drawn File from below:</h2></strong>
+    <input id="file-picker" type="file" name="file" accept="image/*"  class="button" style="width:250px"multiple>
+    <div id="msg" ></div>
+	
+    <input type="submit" value="Upload file and Predict English Letter!" id="upload-button" class="button"></center>
+</form></div>
+</body>
+<script>
+
+    $("#file-picker").change(function(){
+
+        var input = document.getElementById('file-picker');
+
+        for (var i=0; i<input.files.length; i++)
+        {
+            var ext= input.files[i].name.substring(input.files[i].name.lastIndexOf('.')+1).toLowerCase()
+
+            if  (ext == 'png')
+            {
+                $("#msg").text("Done..Your File is Supported:)")
+            }
+            else
+            {
+                $("#msg").text("Files are NOT supported")
+                document.getElementById("file-picker").value ="";
+            }
+
+        }
+
+
+    } );
+
+</script>
+</html>
